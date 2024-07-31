@@ -1,0 +1,45 @@
+  .productDetails{
+    padding: 5vmax;
+    width: 99vw;
+  }
+
+  .pimg{
+    height: 80vmin;
+    width: 80vmin;
+  }
+  
+  .detailsBlock-1 {
+    color: rgb(54, 54, 54);
+    font: 600 1.6vmax "Roboto";
+    padding: 1.5vmax 0;
+  }
+  .detailsBlock-1 h2{
+    text-align: left;
+    font-size: 2vmax;
+  }
+  
+  .detailsBlock-2 {
+    border-top: 1px solid rgba(0, 0, 0, 0.205);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.205);
+    width: 70%;
+    padding: 1.5vmax 0;
+  }
+  
+  .detailsBlock-3 {
+    width: 70%;
+    color: rgba(17, 17, 17, 0.795);
+    font: 600 1.5vmax "Franklin Gothic Medium";
+    margin: 2vmax 0;
+  }
+  .detailsBlock-3 h2{
+    font-size: 2vmax;
+    text-align: left;
+  }
+  
+  .detailsBlock-4 {
+    color: rgba(0, 0, 0, 0.534);
+    font-family: sans-serif;
+    font-size: 1vmax;
+    border-top: 1px solid rgba(0, 0, 0, 0.205);
+    padding: 2vmax 0;
+  }

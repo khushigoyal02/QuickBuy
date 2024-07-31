@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+nav{
+    background-color: #eb4034;
+    padding: 20px;
+}
+nav h1{
+    margin-left: 5vmax;
+    margin-right: 5vmax;
+}
+
+nav ul{
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-item:hover{
+    font-weight: bold;
+}
+
+.green {color: green;}
+.red {color: red;}
+
+button{
+    border: none;
+    cursor: pointer;
+    color: white;
+    transition: all 0.5s;
+    background-color: tomato;
+    font: 500 1vmax "Roboto";
+    border-radius: 20px;
+    padding: 0.5vmax 2vmax;
+    outline: none;
+}
+
+button:hover:not(.change){
+    background-color: #eb4034;
+}
+
+@media only screen and (max-width: 480px) {
+    nav h1{
+        margin: 0;
+    }
+  }

@@ -1,0 +1,18 @@
+.empty{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 10vmax;
+}
+.cartList{
+    list-style: none;
+    margin: 2vmax;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.205);
+    padding-bottom: 2vmax;
+}
+.cartList img{
+    height: 100px;
+    width: 100px;
+}

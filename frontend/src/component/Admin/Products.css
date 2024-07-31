@@ -1,0 +1,18 @@
+.addicon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-heading{
+  font: 400 2rem "Roboto";
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.637);
+  transition: all 0.5s;
+  margin: 1rem;
+  text-align: center;
+}
+
+.table-box{
+    min-height: 15vmax;
+}

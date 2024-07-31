@@ -1,0 +1,13 @@
+.about{
+    text-align: center;
+    font: 500 1.5vmax "Roboto";
+    margin-bottom: 5vmax;
+}
+.about h2{
+    color: tomato;
+}
+.about img{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
