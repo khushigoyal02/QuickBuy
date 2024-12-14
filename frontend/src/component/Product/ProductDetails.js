@@ -69,7 +69,7 @@ const ProductDetails = () => {
                 <RatingStars {...options} value={product.rating}/>
               </div>
               <div className="detailsBlock-3">
-                <h2>{`₹${product.price}`}</h2>
+                <h2>{`$${product.price}`}</h2>
                 <button disabled={product.stock === 0} onClick={addToCart}>Add to Cart</button>
               </div>
               <div>

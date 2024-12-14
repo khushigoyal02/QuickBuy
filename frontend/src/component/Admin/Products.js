@@ -1,5 +1,5 @@
 import {React, useEffect, useState} from 'react';
-import {Link} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
@@ -8,6 +8,8 @@ import './Products.css';
 
 const Products = () => {
     const [products, setProducts] = useState([]);
+    const navigate=useNavigate();
+
     const fetchProducts = async () => {
     try {
       const response = await axios.get('/api/v1/products');
@@ -21,12 +23,20 @@ const Products = () => {
 
   const deleteProduct = async(productId) => {
     try {
-      await axios.delete(`/api/v1/delproduct/${productId}`);
+      await axios.delete(`/api/v1/products/${productId}`);
       //setProducts(products.filter(item => item._id != productId));
-      window.location.reload();
+      //window.location.reload();
     } catch(error) {
       console.log('Error deleting product:', error);
     }
+  }
+
+  const handleAddProduct=async()=>{
+    navigate('/add-product');
+  }
+
+  const editProduct=async(productId)=>{
+    navigate(`/edit-product/${productId}`);
   }
 
   return (
@@ -47,16 +57,14 @@ const Products = () => {
             <td>{product.name}</td>
             <td>{product.stock}</td>
             <td>{product.price}</td>
-            <td><EditIcon/> <DeleteIcon onClick={() => deleteProduct(product._id)} /></td>
+            <td><EditIcon onClick={() => editProduct(product._id)} /> <DeleteIcon onClick={() => deleteProduct(product._id)} /></td>
           </tr>
         ))}
       </tbody>
       </table>
-      <div className='addicon m-3'>
-        <button>
-        <Link className='text-decoration-none'>
+      <div className='but m-3'>
+        <button onClick={handleAddProduct}>
           <AddIcon style={{ color: '#fff' }} /> <span className='fs-5 text-white'>Add</span>
-        </Link>
         </button>
       </div>
     </div>

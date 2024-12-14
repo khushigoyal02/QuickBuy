@@ -9,7 +9,7 @@ const UserInfo = () => {
 
     const fetchUser=async()=>{
         try{
-            const response=await axios.get(`/api/v1/user-data/${userId}`);
+            const response=await axios.get(`/api/v1/user/${userId}`);
             setUser(response.data);
         }catch(error){
             console.log('Error fetching user data:', error);

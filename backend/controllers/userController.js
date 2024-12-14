@@ -73,7 +73,19 @@ exports.displayUsers=catchAsyncErrors(async (req,res)=>{
   res.json(users);
 })
 
+// Edit User -- Admin
+exports.editUser=catchAsyncErrors(async (req,res)=>{
+  const userId = req.params.userId; 
+  const { role } = req.body; 
+
+        const updatedUser = await User.findByIdAndUpdate(userId, {
+            role
+        }, { new: true }); 
+
+        return res.status(200).json({ message: "User updated successfully", user: updatedUser });
+})
+
 // Delete User -- Admin
 exports.deleteUser=catchAsyncErrors(async (req,res)=>{
-  await User.findByIdAndDelete(req.params.id);
+  await User.findByIdAndDelete(req.params.userId);
 })

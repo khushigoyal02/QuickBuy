@@ -10,9 +10,11 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads'))); // Serve s
 const product = require("./routes/productRoute");
 const user = require("./routes/userRoute");
 const cart=require("./routes/cartRoute");
+const order=require("./routes/orderRoute");
 
 app.use("/api/v1", product);
 app.use("/api/v1", user);
 app.use("/api/v1", cart);
+app.use("/api/v1", order);
 
 module.exports=app;

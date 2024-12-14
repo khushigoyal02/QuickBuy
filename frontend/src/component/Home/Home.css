@@ -6,7 +6,7 @@
     height: 90vmin;
     text-align: center;
     color: white;
-    width: 99.6vmax;
+    width: 99.6vw;
   }
   .banner > .main{
     display: flex;

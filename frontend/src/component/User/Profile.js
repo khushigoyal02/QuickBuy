@@ -10,7 +10,7 @@ const Profile = () => {
 
   const fetchUser=async()=>{
     try{
-        const response=await axios.get(`/api/v1/user-data/${userId}`);
+        const response=await axios.get(`/api/v1/user/${userId}`);
         setProfilePic(response.data.profilePic);
     }catch(error){
         console.log('Error fetching user data:', error);

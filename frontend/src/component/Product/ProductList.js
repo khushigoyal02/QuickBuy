@@ -33,7 +33,7 @@ function ProductList() {
             <img src={product.imageurl} alt={product.name} />
             <h3>{product.name}</h3>
             <ReactStars {...options} value={product.rating}/>
-            <span>{`₹${product.price}`}</span>
+            <span>{`$${product.price}`}</span>
           </Link>
         ))}
       </div>

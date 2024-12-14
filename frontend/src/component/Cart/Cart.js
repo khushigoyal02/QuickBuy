@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Cart.css';
 import RemoveShoppingCartIcon from '@material-ui/icons/RemoveShoppingCart';
@@ -7,6 +8,7 @@ const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
   const userId = localStorage.getItem('userId');
   const [quantity, setQuantity] = useState(1);
+  const navigate = useNavigate();
 
   useEffect(() => { fetchCartItems() }, []);
 
@@ -41,6 +43,14 @@ const Cart = () => {
     }
   };
 
+  const calculateTotalPrice = (price, quantity) => {
+    return price * quantity 
+  };
+
+  const handlePlaceOrder = async () => {
+    navigate('/shipping');
+  }
+
   return (
     <div>
       {cartItems.length === 0 ? (
@@ -56,13 +66,13 @@ const Cart = () => {
               <div className='col-md-6'>
               <img src={item.imageurl} alt={item.name} />
               <h4 className='fw-light detailsBlock-1 pt-1 pb-0 fs-5'>{item.name}</h4>
-              <span className='fw-bold'>Price: ₹{item.price}</span> <br/>
+              <span className='fw-bold'>Price: ${calculateTotalPrice(item.price, item.quantity)}</span> <br/>
               <button onClick={() => removeFromCart(item.productId)}>Remove</button>
               </div>
 
               <div className='mt-3 col-md-6'>
               <p className="fs-5 fw-bold">Quantity: {item.quantity}</p>
-      <select value={quantity} onChange={handleQuantityChange}>
+      <select value={quantity} onChange={handleQuantityChange} >
         {[...Array(10)].map((_, index) => (
           <option key={index} value={index + 1}>
             {index + 1}
@@ -74,6 +84,9 @@ const Cart = () => {
             </li>
           ))}
         </ul>
+        <div className='but mb-3'>
+        <button onClick={handlePlaceOrder}>Place Order</button>
+        </div>
         </div>
       )}
     </div>

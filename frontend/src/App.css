@@ -3,24 +3,6 @@
     scroll-behavior: smooth;
 }
 
-nav{
-    background-color: #eb4034;
-    padding: 20px;
-}
-nav h1{
-    margin-left: 5vmax;
-    margin-right: 5vmax;
-}
-
-nav ul{
-    display: flex;
-    justify-content: space-around;
-}
-
-.nav-item:hover{
-    font-weight: bold;
-}
-
 .green {color: green;}
 .red {color: red;}
 
